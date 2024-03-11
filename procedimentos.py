@@ -37,8 +37,8 @@ def ressonancia():
     ress()
 
 
-def sair():
-    root.destroy()
+def sair(janela):
+    janela.destroy()
 
 
 def criar_botoes():
@@ -100,7 +100,7 @@ def criar_botoes():
 
     posi_y = 0.9
 
-    btn_sair = tk.Button(root, text='Sair', command=sair, **formato_botao2)
+    btn_sair = tk.Button(root, text='Sair', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.5, rely=posi_y, anchor="center", width=180, height=60)
 
     return root
