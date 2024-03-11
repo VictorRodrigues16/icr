@@ -2,6 +2,10 @@ import tkinter as tk
 from examee_sangue import sangue
 from examee_radiografia import radio
 from examee_ultrassom import ultra
+from examee_endoscopia import endos
+from examee_tomografia import tomo
+from examee_ressonancia import ress
+
 
 def exame_sangue():
     print("Executando exame de sangue.")
@@ -12,20 +16,25 @@ def radiografia():
     print("Realizando radiografia.")
     radio()
 
+
 def ultrassom():
     print("Realizando ultrassom.")
     ultra()
 
+
 def endoscopia():
     print("Realizando endoscopia.")
+    endos()
 
 
 def tomografia():
     print("Realizando tomografia.")
+    tomo()
 
 
 def ressonancia():
     print("Realizando ressonância magnética.")
+    ress()
 
 
 def sair():
