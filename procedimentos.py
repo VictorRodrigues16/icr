@@ -1,23 +1,32 @@
 import tkinter as tk
-from  examee_sangue import sangue
+from examee_sangue import sangue
+from examee_radiografia import radio
+from examee_ultrassom import ultra
+
 def exame_sangue():
     print("Executando exame de sangue.")
     sangue()
 
+
 def radiografia():
     print("Realizando radiografia.")
+    radio()
 
 def ultrassom():
     print("Realizando ultrassom.")
+    ultra()
 
 def endoscopia():
     print("Realizando endoscopia.")
 
+
 def tomografia():
     print("Realizando tomografia.")
 
+
 def ressonancia():
     print("Realizando ressonância magnética.")
+
 
 def sair():
     root.destroy()
@@ -55,7 +64,6 @@ def criar_botoes():
         'pady': 5
     }
 
-
     procedimentos_direita = [
         ("Endoscopia", endoscopia),
         ("Tomografia", tomografia),
@@ -87,7 +95,6 @@ def criar_botoes():
     btn_sair.place(relx=0.5, rely=posi_y, anchor="center", width=180, height=60)
 
     return root
-
 
 
 if __name__ == "__main__":

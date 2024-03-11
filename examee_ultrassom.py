@@ -7,7 +7,7 @@ def veja_video():
 def sair(janela):
     janela.destroy()
 
-def sangue():
+def ultra():
     root = tk.Toplevel()
     root.title("Procedimento")
     largura_janela = 750
@@ -20,7 +20,7 @@ def sangue():
     canvas.pack()
 
     # Abre a imagem original
-    image_original = Image.open("sangue.png")
+    image_original = Image.open("ultrassom.png")
     # Redimensiona a imagem para um tamanho menor (por exemplo, 400x400)
     image_resized = image_original.resize((280, 210))
     # Converte a imagem para um formato suportado pelo tkinter
@@ -63,20 +63,20 @@ def sangue():
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
     # Adiciona o rótulo (label) com o texto "Exame De Sangue" em três linhas distintas
-    label_exame = tk.Label(root, text="Exame De\nSangue", font=("Helvetica", 45, "bold"), foreground="#4682B4")
-    label_exame.place(relx=0.9, rely=0.10, anchor="ne")
+    label_exame = tk.Label(root, text="Ultrassom", font=("Helvetica", 45, "bold"), foreground="#4682B4")
+    label_exame.place(relx=0.9, rely=0.15, anchor="ne")
 
     tittle_preparo = tk.Label(root, text="Preparo", font=("Helvetica", 30, "bold"), foreground="#696969")
-    tittle_preparo.place(relx=0.60, rely=0.50, anchor="se")
+    tittle_preparo.place(relx=0.61, rely=0.55, anchor="se")
 
     preparo_cont = tk.Label(root,
-                            text="1. Jejum de até 3 horas antes do exame\n (pode ingerir água)\n \n 2. Não ingerir bebidas alcoólicas\n por 72h antes do exame\n \n 3. Evitar exercícios físicos\n na vesperá do exame"
+                            text="1. Jejum de 4 horas antes (pode beber água).\n \n 2. Beber água adequadamente(Não urinar antes do exame).\n \n 3. Seguir instruções específicas da clínica."
                             , font=("Helvetica", 13, "bold"), foreground="#696969")
-    preparo_cont.place(relx=0.69, rely=0.78, anchor="se")
+    preparo_cont.place(relx=0.82, rely=0.78, anchor="se")
 
     return root
 
 
 if __name__ == "__main__":
-    root = sangue()
+    root = ultra()
     root.mainloop()
