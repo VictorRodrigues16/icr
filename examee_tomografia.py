@@ -1,9 +1,11 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-
+import webbrowser
 
 def veja_video():
     print("Abrindo o vídeo.")
+    url = "https://www.youtube.com/watch?v=fX_kaHguMz0"
+    webbrowser.open(url)
 
 
 def sair(janela):
@@ -22,14 +24,10 @@ def tomo():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    # Abre a imagem original
     image_original = Image.open("tomografia.png")
-    # Redimensiona a imagem para um tamanho menor (por exemplo, 400x400)
     image_resized = image_original.resize((250, 230))
-    # Converte a imagem para um formato suportado pelo tkinter
     photo = ImageTk.PhotoImage(image_resized)
 
-    # Coloca a imagem no canvas mais no canto superior esquerdo
     canvas.create_image(30, 5, anchor='nw', image=photo)
     canvas.image = photo
 
@@ -65,14 +63,13 @@ def tomo():
     btn_sair = tk.Button(root, text='Sair', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
-    # Adiciona o rótulo (label) com o texto "Exame De Sangue" em três linhas distintas
     label_exame = tk.Label(root, text="Tomografia", font=("Helvetica", 45, "bold"), foreground="#4682B4")
-    label_exame.place(relx=0.9, rely=0.10, anchor="ne")
+    label_exame.place(relx=0.9, rely=0.18, anchor="ne")
 
     tittle_preparo = tk.Label(root, text="Preparo", font=("Helvetica", 30, "bold"), foreground="#696969")
     tittle_preparo.place(relx=0.60, rely=0.52, anchor="se")
 
-    preparo_cont = tk.Label(root, text="1. Utilizar de preferência roupas de algodão\n e que não tenham itens metálicos\n (botões e zíper), incluindo roupas íntimas.\n \n 2. Realizar jejum de 8 horas antes do exame (Incluindo água).\n \n 3. Seguir instruções de preparo específicas\nfornecidas pela clínica ou hospital."
+    preparo_cont = tk.Label(root, text="1. Use roupas de algodão sem itens metálicos, \nincluindo roupas íntimas, para evitar interferências no exame.\n \n 2. Realizar jejum de 8 horas antes do exame (Incluindo água).\n \n 3. Seguir instruções de preparo específicas\nfornecidas pela clínica ou hospital."
                                        , font=("Helvetica", 13, "bold"), foreground="#696969")
     preparo_cont.place(relx=0.83, rely=0.78, anchor="se")
 

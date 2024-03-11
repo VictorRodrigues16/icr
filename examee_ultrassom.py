@@ -1,9 +1,11 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+import webbrowser
 
 def veja_video():
     print("Abrindo o vídeo.")
-
+    url = "https://www.youtube.com/watch?v=W40yaaRDy0o"
+    webbrowser.open(url)
 def sair(janela):
     janela.destroy()
 
@@ -19,14 +21,10 @@ def ultra():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    # Abre a imagem original
     image_original = Image.open("ultrassom.png")
-    # Redimensiona a imagem para um tamanho menor (por exemplo, 400x400)
     image_resized = image_original.resize((280, 210))
-    # Converte a imagem para um formato suportado pelo tkinter
     photo = ImageTk.PhotoImage(image_resized)
 
-    # Coloca a imagem no canvas mais no canto superior esquerdo
     canvas.create_image(30, 40, anchor='nw', image=photo)
     canvas.image = photo
 

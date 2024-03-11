@@ -2,9 +2,10 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import webbrowser
 
-def veja_video():
+
+def mapa():
     print("Abrindo o vídeo.")
-    url = "https://www.youtube.com/watch?v=khObM6qHRfs"
+    url = "https://www.google.com.br/maps/place/Hospital+das+Cl%C3%ADnicas+da+Universidade+de+S%C3%A3o+Paulo+Emergency+Room/@-23.5567673,-46.6729039,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce582a0a3b4c3f:0x878285f3f6b43c83!8m2!3d-23.5567722!4d-46.670329!16s%2Fg%2F11g6nj4ghl?entry=ttu"
     webbrowser.open(url)
 
 
@@ -12,9 +13,9 @@ def sair(janela):
     janela.destroy()
 
 
-def endos():
+def mapa_int():
     root = tk.Toplevel()
-    root.title("Procedimento")
+    root.title("MAPAS")
     largura_janela = 750
     altura_janela = 600
     pos_x = (root.winfo_screenwidth() - largura_janela) // 2
@@ -24,11 +25,11 @@ def endos():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image_original = Image.open("endoscopia.png")
-    image_resized = image_original.resize((250, 230))
+    image_original = Image.open("mapa-interno.png")
+    image_resized = image_original.resize((520, 410))
     photo = ImageTk.PhotoImage(image_resized)
 
-    canvas.create_image(30, 5, anchor='nw', image=photo)
+    canvas.create_image(370, 80, anchor='n', image=photo)
     canvas.image = photo
 
     formato_botao = {
@@ -51,32 +52,25 @@ def endos():
         'pady': 5
     }
     opcao = [
-        ("Veja o Vídeo", veja_video),
+        ("Como chegar?", mapa),
         ("Sair", lambda: sair(root))
     ]
 
     pos_y = 0.96
 
-    btn_video = tk.Button(root, text='Veja o Vídeo', command=veja_video, **formato_botao)
-    btn_video.place(relx=0.35, rely=pos_y, anchor="s", width=220, height=60)
+    btn_mapa = tk.Button(root, text='Como chegar?', command=mapa, **formato_botao)
+    btn_mapa.place(relx=0.35, rely=pos_y, anchor="s", width=220, height=60)
 
     btn_sair = tk.Button(root, text='Sair', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
-    # Adiciona o rótulo (label) com o texto "Exame De Sangue" em três linhas distintas
-    label_exame = tk.Label(root, text="Endoscopia", font=("Helvetica", 45, "bold"), foreground="#4682B4")
-    label_exame.place(relx=0.9, rely=0.10, anchor="ne")
 
-    tittle_preparo = tk.Label(root, text="Preparo", font=("Helvetica", 30, "bold"), foreground="#696969")
-    tittle_preparo.place(relx=0.60, rely=0.52, anchor="se")
-
-    preparo_cont = tk.Label(root, text="1. Realizar uma dieta leve no dia anterior.\n \n 2. Realizar jejum de 8 horas antes do exame (Incluindo água).\n \n 3. Seguir instruções de preparo específicas\nfornecidas pela clínica ou hospital."
-                                       , font=("Helvetica", 13, "bold"), foreground="#696969")
-    preparo_cont.place(relx=0.83, rely=0.78, anchor="se")
+    tittle_preparo = tk.Label(root, text="Mapa Interno", font=("Helvetica", 30, "bold"), foreground="#696969")
+    tittle_preparo.place(relx=0.5, rely=0, anchor="n")
 
     return root
 
 
 if __name__ == "__main__":
-    root = endos()
+    root = mapa_int()
     root.mainloop()

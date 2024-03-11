@@ -1,9 +1,11 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-
+import webbrowser
 
 def veja_video():
     print("Abrindo o vídeo.")
+    url = "https://www.youtube.com/watch?v=gwtkEdd5YZk"
+    webbrowser.open(url)
 
 
 def sair(janela):
@@ -22,15 +24,12 @@ def ress():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    # Abre a imagem original
-    image_original = Image.open("tomografia.png")  # Mesma máquina para utilizada na tomografia
-    # Redimensiona a imagem para um tamanho menor (por exemplo, 400x400)
-    image_resized = image_original.resize((250, 230))
-    # Converte a imagem para um formato suportado pelo tkinter
+
+    image_original = Image.open("ressonancia.png")
+    image_resized = image_original.resize((180, 160))
     photo = ImageTk.PhotoImage(image_resized)
 
-    # Coloca a imagem no canvas mais no canto superior esquerdo
-    canvas.create_image(30, 5, anchor='nw', image=photo)
+    canvas.create_image(70, 35, anchor='nw', image=photo)
     canvas.image = photo
 
     formato_botao = {
@@ -67,14 +66,14 @@ def ress():
 
     # Adiciona o rótulo (label) com o texto "Exame De Sangue" em três linhas distintas
     label_exame = tk.Label(root, text="Ressonância", font=("Helvetica", 45, "bold"), foreground="#4682B4")
-    label_exame.place(relx=0.9, rely=0.10, anchor="ne")
+    label_exame.place(relx=0.95, rely=0.10, anchor="ne")
 
     tittle_preparo = tk.Label(root, text="Preparo", font=("Helvetica", 30, "bold"), foreground="#696969")
     tittle_preparo.place(relx=0.60, rely=0.46, anchor="se")
 
-    preparo_cont = tk.Label(root, text="1. Realizar jejum de 12 horas.\n \n 2. E 24 horas antes do exame não tomar ou comer\n nenhuma substância que contenha chocolate, café,\n chá, coca-cola, chimarrão.\n \n 3. Não utilize jóias e metais\n \n 4. Seguir instruções de preparo específicas\nfornecidas pela clínica ou hospital."
+    preparo_cont = tk.Label(root, text="1. Realizar jejum de 12 horas.\n \n 2. Evite consumir chocolate, café, chá, coca-cola ou chimarrão\n nas 24 horas que antecedem o exame.\n \n 3. Não utilize jóias e metais\n \n 4. Seguir instruções de preparo específicas\nfornecidas pela clínica ou hospital."
                                        , font=("Helvetica", 13, "bold"), foreground="#696969")
-    preparo_cont.place(relx=0.80, rely=0.80, anchor="se")
+    preparo_cont.place(relx=0.82, rely=0.80, anchor="se")
 
     return root
 
