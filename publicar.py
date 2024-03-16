@@ -134,12 +134,11 @@ def ver_publicacoes():
         imagem = publicacao["imagem"]
         descricao = publicacao["descricao"]
 
-        if i % 3 == 0 and i != 0:
+        if i % 2 == 0 and i != 0:
             row += 1
-            col = 0
 
         frame_publicacao = tk.Frame(frame_publicacoes, relief=tk.GROOVE, borderwidth=2)
-        frame_publicacao.grid(row=row, column=col, padx=10, pady=10)
+        frame_publicacao.grid(row=row, column=i % 2, padx=10, pady=10)
 
         tk.Label(frame_publicacao, text=f"{nome} {sobrenome}", font=('Arial', 14, 'bold')).pack()
 
@@ -153,9 +152,8 @@ def ver_publicacoes():
         tk.Label(frame_publicacao, text="Descrição", font=('Arial', 14, 'bold')).pack()
         tk.Label(frame_publicacao, text=descricao, font=('Arial', 12)).pack()
 
-    col += 1
-
     janela_visualizar.mainloop()
+
 
 
 
