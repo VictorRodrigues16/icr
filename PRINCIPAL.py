@@ -3,9 +3,10 @@ from PIL import Image, ImageTk
 import ctypes
 from procedimentos import criar_botoes
 from mapa_interno import mapa_int
+from publicar import criar_botoes_pub
 def publicar():
     print("Botão Publicar pressionado")
-
+    criar_botoes_pub()
 def procedimento():
     print("Botão Procedimentos pressionado")
     criar_botoes()

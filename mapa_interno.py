@@ -61,7 +61,7 @@ def mapa_int():
     btn_mapa = tk.Button(root, text='Como chegar?', command=mapa, **formato_botao)
     btn_mapa.place(relx=0.35, rely=pos_y, anchor="s", width=220, height=60)
 
-    btn_sair = tk.Button(root, text='Sair', command=lambda: sair(root), **formato_botao2)
+    btn_sair = tk.Button(root, text='Voltar', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
 

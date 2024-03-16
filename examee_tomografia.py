@@ -60,7 +60,7 @@ def tomo():
     btn_video = tk.Button(root, text='Veja o Vídeo', command=veja_video, **formato_botao)
     btn_video.place(relx=0.35, rely=pos_y, anchor="s", width=220, height=60)
 
-    btn_sair = tk.Button(root, text='Sair', command=lambda: sair(root), **formato_botao2)
+    btn_sair = tk.Button(root, text='Voltar', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
     label_exame = tk.Label(root, text="Tomografia", font=("Helvetica", 45, "bold"), foreground="#4682B4")
