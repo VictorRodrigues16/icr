@@ -2,12 +2,16 @@ import tkinter as tk
 from PIL import Image, ImageTk
 import webbrowser
 
+
 def veja_video():
     print("Abrindo o vídeo.")
     url = "https://www.youtube.com/watch?v=hwlMfNxX05c"
     webbrowser.open(url)
+
+
 def sair(janela):
     janela.destroy()
+
 
 def sangue():
     root = tk.Toplevel()
@@ -20,7 +24,6 @@ def sangue():
 
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
-
 
     image_original = Image.open("sangue.png")
     image_resized = image_original.resize((280, 210))
@@ -48,6 +51,7 @@ def sangue():
         'padx': 10,
         'pady': 5
     }
+
     opcao = [
         ("Veja o Vídeo", veja_video),
         ("Sair", lambda: sair(root))
@@ -61,7 +65,6 @@ def sangue():
     btn_sair = tk.Button(root, text='Voltar', command=lambda: sair(root), **formato_botao2)
     btn_sair.place(relx=0.65, rely=pos_y, anchor="s", width=150, height=60)
 
-    # Adiciona o rótulo (label) com o texto "Exame De Sangue" em três linhas distintas
     label_exame = tk.Label(root, text="Exame De\nSangue", font=("Helvetica", 45, "bold"), foreground="#4682B4")
     label_exame.place(relx=0.9, rely=0.10, anchor="ne")
 

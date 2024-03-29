@@ -16,7 +16,7 @@ def localizacao():
     mapa_int()
 def sair():
     root.destroy()
-
+    return True
 def configure_button(button):
     button.configure(
         background='#6495ED',
@@ -60,27 +60,26 @@ label_img = tk.Label(root, image=photo)
 label_img.place(relx=0.5, rely=0, anchor="n")
 
 espacamento = 16
-pos_y = 0.47
 
 btn_publicar = tk.Button(root, text="Publicar", command=publicar)
 configure_button(btn_publicar)
-btn_publicar.place(relx=0.5, rely=pos_y, anchor="center", width=230, height=55)
+btn_publicar.place(relx=0.5, rely=0.47, anchor="center", width=230, height=55)
 
-pos_y += 0.1 + espacamento / 500
+
 
 btn_procedimentos = tk.Button(root, text="Procedimentos", command=procedimento)
 configure_button(btn_procedimentos)
-btn_procedimentos.place(relx=0.5, rely=pos_y, anchor="center", width=230, height=55)
+btn_procedimentos.place(relx=0.5, rely=0.59, anchor="center", width=230, height=55)
 
-pos_y += 0.1 + espacamento / 500
+
 
 btn_localizacao = tk.Button(root, text="Localização", command=localizacao)
 configure_button(btn_localizacao)
-btn_localizacao.place(relx=0.5, rely=pos_y, anchor="center", width=230, height=55)
+btn_localizacao.place(relx=0.5, rely=0.71, anchor="center", width=230, height=55)
 
-pos_y += 0.1 + espacamento / 500
+
 
 btn_sair = tk.Button(root, text='Sair', command=sair, **formato_botao2)
-btn_sair.place(relx=0.5, rely=pos_y, anchor="center", width=230, height=55)
+btn_sair.place(relx=0.5, rely=0.83, anchor="center", width=230, height=55)
 
 root.mainloop()
