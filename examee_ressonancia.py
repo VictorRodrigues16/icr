@@ -25,7 +25,7 @@ def ress():
     canvas.pack()
 
 
-    image_original = Image.open("ressonancia.png")
+    image_original = Image.open("galery/ressonancia.png")
     image_resized = image_original.resize((180, 160))
     photo = ImageTk.PhotoImage(image_resized)
 

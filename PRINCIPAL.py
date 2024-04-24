@@ -41,7 +41,7 @@ formato_botao2 = {
 
 root = tk.Tk()
 root.title("ICR CONECTA")
-root.iconbitmap('image-3.ico')
+root.iconbitmap('galery/image-3.ico')
 
 user32 = ctypes.windll.user32
 largura_tela = user32.GetSystemMetrics(0)
@@ -53,7 +53,7 @@ pos_x = (largura_tela - largura_janela) // 2
 pos_y = (altura_tela - altura_janela) // 2
 root.geometry(f"{largura_janela}x{altura_janela}+{pos_x}+{pos_y}")
 
-image = Image.open("image_3.png")
+image = Image.open("../icr2/galery/image_3.png")
 image = image.resize((350, 250))
 photo = ImageTk.PhotoImage(image)
 label_img = tk.Label(root, image=photo)

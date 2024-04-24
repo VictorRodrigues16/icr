@@ -21,7 +21,7 @@ def ultra():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image_original = Image.open("ultrassom.png")
+    image_original = Image.open("galery/ultrassom.png")
     image_resized = image_original.resize((280, 210))
     photo = ImageTk.PhotoImage(image_resized)
 

@@ -176,7 +176,7 @@ def criar_botoes_pub():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image_original = Image.open("image_3.png")
+    image_original = Image.open("../icr2/galery/image_3.png")
     image_resized = image_original.resize((340, 240))
     photo = ImageTk.PhotoImage(image_resized)
 
@@ -221,7 +221,7 @@ def criar_botoes_pub():
 
 
 if __name__ == "__main__":
-    root = criar_botoes()
+
 
     # Loop principal que não será interrompido pelo teclado
     while root.winfo_exists():

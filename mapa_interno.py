@@ -25,7 +25,7 @@ def mapa_int():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image_original = Image.open("mapa-interno.png")
+    image_original = Image.open("galery/mapa-interno.png")
     image_resized = image_original.resize((520, 410))
     photo = ImageTk.PhotoImage(image_resized)
 

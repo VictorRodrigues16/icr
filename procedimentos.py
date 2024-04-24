@@ -53,7 +53,7 @@ def criar_botoes():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image = tk.PhotoImage(file="image_3.png")
+    image = tk.PhotoImage(file="../icr2/galery/image_3.png")
     canvas.create_image(largura_janela / 2, 0, anchor='n', image=image)
     canvas.image = image
 

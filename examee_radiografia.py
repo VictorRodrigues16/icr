@@ -23,7 +23,7 @@ def radio():
     canvas = tk.Canvas(root, width=largura_janela, height=altura_janela)
     canvas.pack()
 
-    image_original = Image.open("radiografia.png")
+    image_original = Image.open("galery/radiografia.png")
     image_resized = image_original.resize((250, 190))
     photo = ImageTk.PhotoImage(image_resized)
 
